@@ -1,0 +1,32 @@
+/************************************
+ヘッダー
+************************************/
+header {
+  height: 10vh;
+  width: 100%;
+  background-color: rgba($color: crimson, $alpha: 0.8);
+  display: flex;
+  justify-content: space-between;
+
+  .header-left {
+    width: 13%;
+    text-align: center;
+    line-height: 10vh;
+    font-size: 20px;
+    a {
+      color: cyan;
+    }
+  }
+  
+  .header-contents {
+    display: flex;
+    width: 50%;
+    text-align: center;
+    div {
+      border-left: 1px solid palevioletred;
+      border-right: 1px solid palevioletred;
+      width: 25%;
+      line-height: 10vh;
+    }
+  }
+}
