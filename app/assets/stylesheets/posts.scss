@@ -15,6 +15,7 @@ header {
     font-size: 20px;
     a {
       color: cyan;
+      font-weight: bold;
     }
   }
   
@@ -27,6 +28,29 @@ header {
       border-right: 1px solid palevioletred;
       width: 25%;
       line-height: 10vh;
+      box-shadow: 2px 3px 0 0;
+      a {
+        color: gold;
+        font-size: 15px;
+        display: block;
+      }
     }
   }
+}
+
+/***********************************************
+index
+***********************************************/
+.container {
+  height: 100vh;
+  background-color: midnightblue;
+}
+
+.board-genre {
+  color: lavender;
+  text-align: center;
+}
+
+.about-service {
+  color: lavender;
 }

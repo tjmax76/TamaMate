@@ -1,0 +1,32 @@
+<div class="about-service">
+  <h3>魂メイト(たまめいと)は雀魂の対戦相手を募集する掲示板です</h3>
+</div>
+
+<%= form_with model: @post, local: false, class: "post-form" do |f| %>
+  <div class="field">
+    <%= f.label "対局ルール"%>
+    <%= f.collection_select(:rule_id, Rule.all, :id, :name, {}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label "ニックネーム" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label "部屋ID" %>
+    <%= f.text_field :room_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label "募集メッセージ" %>
+    <%= f.text_field :text %>
+  </div>
+
+  <div class="field">
+    <%= f.label "パスワード" %>
+    <%= f.password_field :password %>
+  </div>
+
+  <%= f.submit "投稿する" %>
+<% end %>
