@@ -1,9 +1,9 @@
 class Post < ApplicationRecord
 
-  validates :room_number, presence: true, numericality: { message: "数字を入力してください"}, length: {minimum: 5}
-  validates :password, numericality: { message: "数字を入力してください"}, length: {minimum: 4}
+  validates :room_number, presence: true, numericality: true, length: {minimum: 5, maximum: 5}
+  validates :password, numericality: true, length: {minimum: 4}
 
   extend ActiveHash::Associations::ActiveRecordExtensions 
-  validates :rule_id, numericality: { other_than: 1, message: '対局ルールを選択してください' }
+  validates :rule_id, numericality: { other_than: 1, message: 'を選択してください' }
   belongs_to :rule
 end
