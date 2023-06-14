@@ -53,4 +53,20 @@ index
 
 .about-service {
   color: lavender;
+  margin-left: 8px;
+}
+
+.post-form {
+  height: 37vh;
+  margin-left: 2%;
+  div {
+    color: white;
+  }
+  .submit {
+    margin-top: 1%;
+  }
+
+  .password, .room_id {
+    width: 11vw
+  }
 }
