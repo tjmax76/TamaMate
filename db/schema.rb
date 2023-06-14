@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2023_06_12_100656) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.integer "rule_id", null: false
-    t.integer "room_id", null: false
+    t.integer "room_number", null: false
     t.text "text"
     t.integer "password"
     t.datetime "created_at", precision: 6, null: false
