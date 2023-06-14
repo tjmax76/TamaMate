@@ -2,31 +2,32 @@
   <h3>魂メイト(たまめいと)は雀魂の対戦相手を募集する掲示板です</h3>
 </div>
 
-<%= form_with model: @post, local: false, class: "post-form" do |f| %>
+<%= form_with model: @post, local: true, class: "post-form" do |f| %>
+  <%= render "layouts/error_messages", model: f.object %>
   <div class="field">
-    <%= f.label "対局ルール"%>
+    <%= f.label "対局ルール"%><br>
     <%= f.collection_select(:rule_id, Rule.all, :id, :name, {}) %>
   </div>
 
   <div class="field">
-    <%= f.label "ニックネーム" %>
+    <%= f.label "名前" %><br>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label "部屋ID" %>
-    <%= f.text_field :room_id %>
+    <%= f.label "部屋番号" %><br>
+    <%= f.text_field :room_number, maxlength: 5, placeholder: "半角数字のみ可", class: "room_id" %>
   </div>
 
   <div class="field">
-    <%= f.label "募集メッセージ" %>
+    <%= f.label "募集メッセージ" %><br>
     <%= f.text_field :text %>
   </div>
 
   <div class="field">
-    <%= f.label "パスワード" %>
-    <%= f.password_field :password %>
+    <%= f.label "パスワード " %><em>※パスワードを設定しておくと投稿の削除ができます</em><br>
+    <%= f.password_field :password, maxlength: 4,  placeholder: "半角数字4ケタ", class: "password" %>
   </div>
 
-  <%= f.submit "投稿する" %>
+  <%= f.submit "投稿する", class: "submit"%>
 <% end %>
