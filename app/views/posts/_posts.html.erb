@@ -3,7 +3,7 @@
 </div>
 
 <%= form_with model: @post, local: true, class: "post-form" do |f| %>
-  <%= render "layouts/error_messages", model: f.object %>
+  <%= render "layouts/error_messages", model: f.object %><br>
   <div class="field">
     <%= f.label "対局ルール"%><br>
     <%= f.collection_select(:rule_id, Rule.all, :id, :name, {}) %>
@@ -15,7 +15,7 @@
   </div>
 
   <div class="field">
-    <%= f.label "部屋番号" %><br>
+    <%= f.label "部屋ID" %><br>
     <%= f.text_field :room_number, maxlength: 5, placeholder: "半角数字のみ可", class: "room_id" %>
   </div>
 

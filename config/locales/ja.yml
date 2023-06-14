@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      post:
+        rule_id: "対局ルール"
+        room_number: "部屋id"
+        password: "パスワード"
