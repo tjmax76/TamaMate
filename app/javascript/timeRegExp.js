@@ -1,5 +1,5 @@
 const display = () => {
-  const timeElements = document.getElementsByClassName('updated_at');
+  const timeElements = document.getElementsByClassName('created_at');
   const pattern = '+0900';
   const array = Array.from(timeElements);
   array.forEach(element => {
