@@ -29,9 +29,5 @@
     <%= f.password_field :password, maxlength: 4,  placeholder: "半角数字4ケタ", class: "password" %>
   </div>
 
-  <%if params[:id]%>
-    <%= params[:id] %>
-  <% end %>
-
   <%= f.submit "投稿する", class: "submit"%>
 <% end %>
