@@ -28,3 +28,10 @@
     password: 1111
   )
 end
+
+Comment.create!(
+  name: "test",
+  text: "Test",
+  password: 1111,
+  post_id: 40
+)
