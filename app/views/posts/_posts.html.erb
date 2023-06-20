@@ -22,8 +22,8 @@
             <input type="submit" class="destroy-btn" value="削除" id="destroy-btn<%= post.id %>">
           </form>
         </div>
+        <%= link_to "comments", post_comments_path(post.id), class: "comments-btn", id: "comments-btn#{post.id}" %>
         <div class="created_at">
-          <%= link_to "comments", post_comments_path(post.id), id: "comments-btn#{post.id}" %>
           <p><%= post.created_at %></p>
         </div>
 
