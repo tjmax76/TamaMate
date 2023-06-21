@@ -3,3 +3,27 @@
   padding-right: 2vw;
   text-align: right;
 }
+
+.comment-content {
+  width: 94%;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 2%;
+  .name, .text, .destroy-comment {
+    padding-left: 2vw;
+  }
+}
+
+.comments-list {
+  width: 84%;
+  padding-bottom: 2%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+
+.comments-container {
+  display: flex;
+  justify-content: right;
+}
