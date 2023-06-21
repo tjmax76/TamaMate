@@ -1,13 +1,23 @@
-const display = () => {
+export const display = () => {
+  console.log("関数が呼び出されました");
   const timeElements = document.getElementsByClassName('created_at');
-  const pattern = '+0900';
+
+  //投稿に対する表示時間修正
+  const pattern1 = '+0900';
+  
+  //コメントに対する表示時間修正
+  const pattern2 = 'T'; 
+  const pattern3 = /\.\d{3}\+09:00/;
+
   const array = Array.from(timeElements);
   array.forEach(element => {
-    element.innerHTML = element.innerHTML.replace(pattern, '');
+    element.innerHTML = element.innerHTML.replace(pattern1, '');
     element.innerHTML = element.innerHTML.replace(/-/g, '/');
-
+    element.innerHTML = element.innerHTML.replace(pattern2, ' ');
+    element.innerHTML = element.innerHTML.replace(pattern3, '');
   });
-
+  
+  
 }
 
 window.addEventListener('load', display);
