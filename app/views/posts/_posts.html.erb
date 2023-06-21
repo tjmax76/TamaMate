@@ -26,8 +26,9 @@
         <div class="created_at">
           <p><%= post.created_at %></p>
         </div>
-
-        <div class="comments-list" type="hidden" id="comments-list<%= post.id %>">
+      </div>
+      <div class="comments-container">
+        <div class="comments-list" id="comments-list<%= post.id %>">
         </div>
       </div>
     <% end %>
