@@ -22,10 +22,13 @@
             <input type="submit" class="destroy-btn" value="削除" id="destroy-btn<%= post.id %>">
           </form>
         </div>
-        <%= link_to "comments", post_comments_path(post.id), class: "comments-btn", id: "comments-btn#{post.id}" %>
+        <%= link_to "コメント一覧", post_comments_path(post.id), class: "comments-btn", id: "comments-btn#{post.id}" %>
         <div class="created_at">
           <p><%= post.created_at %></p>
         </div>
+      </div>
+      <div class="comment-form-box" style="display: none;" id="comment-form-box<%= post.id %>">
+        <%= render partial: "comments/form", locals: { "@post": post }%>
       </div>
       <div class="comments-container">
         <div class="comments-list" id="comments-list<%= post.id %>">
