@@ -16,7 +16,7 @@
 
   <div class="field">
     <%= f.label "部屋ID" %><br>
-    <%= f.text_field :room_number, maxlength: 5, placeholder: "半角数字のみ可", class: "room_id", auto_complete: false %>
+    <%= f.text_field :room_number, maxlength: 5, placeholder: "半角数字のみ可", class: "room_id" %>
   </div>
 
   <div class="field">
@@ -26,8 +26,8 @@
 
   <div class="field">
     <%= f.label "パスワード " %><em>※パスワードを設定しておくと投稿の削除ができます</em><br>
-    <%= f.password_field :password, maxlength: 4,  placeholder: "半角数字4ケタ", class: "password" %>
+    <%= f.password_field :password, maxlength: 4,  placeholder: "半角数字4ケタ", class: "password", autocomplete: "new-password" %>
   </div>
 
-  <%= f.submit "投稿する", class: "submit"%>
+  <%= f.submit "投稿する", class: "submit" %>
 <% end %>
