@@ -1,7 +1,10 @@
 import { display } from "./timeRegExp";
 
 const buildHTML = (comments, postID) => {
-  const commentsList = document.getElementById(`comments-list${postID}`)
+  const commentsList = document.getElementById(`comments-list${postID}`);
+  const form = document.getElementById(`comment-form-box${postID}`);
+  form.style.display = "block";
+  commentsList.innerHTML = "";
   comments.forEach(comment => {
     const html = `
       <div class="comment-content">
