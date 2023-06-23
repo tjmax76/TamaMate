@@ -1,5 +1,4 @@
 export const display = () => {
-  console.log("関数が呼び出されました");
   const timeElements = document.getElementsByClassName('created_at');
 
   //投稿に対する表示時間修正
