@@ -18,12 +18,22 @@
   width: 84%;
   padding-bottom: 2%;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
 }
 
 .comments-container {
   display: flex;
   justify-content: right;
+}
+
+.comment-form-box {
+  padding-left: 4vw;
+}
+
+.comment-form {
+  .submit {
+    margin-top: 1%;
+  }
+  .password {
+    width: 10vw;
+  }
 }
