@@ -8,19 +8,15 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @posts = Post.all.order(created_at: "DESC").page(params[:page]).per(5)
-    current_url = request.headers['Referer']
+    set_name(@post)
+    # current_url = request.headers['Referer']
     id = session[:id]
     if id.to_i != 0
       @rule = Rule.find(id)
     end
-      
-    
-    if params[:post][:name] == ""
-      @post.name = "名無し"
-    end
     
     if @post.save
-      after_save(id)
+      succeeded_save(id)
     else
       faild_save(id)
     end
@@ -48,32 +44,11 @@ class PostsController < ApplicationController
     else
       render json: { text: wrong_password_alert }
     end
-    
   end
   
   private
   def post_params
     params.require(:post).permit(:name, :rule_id, :room_number, :text, :password)
   end
-
-  def succeeded_save(id)
-    if id.match(/\/$/)
-      redirect_to root_path
-    else
-      redirect_to post_path(id)
-    end
-  end
-  
-  def faild_save(id)
-    if id.match(/\/$/)
-      render :index
-    else
-      render :show
-    end
-  end
-    
-    def keep_id(id)
-      session[:id] = id
-    end
-  end
+end
   
